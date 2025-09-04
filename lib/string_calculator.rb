@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# StringCalculator is a simple calculator that adds numbers provided in a string format.
 class StringCalculator
   def self.add(input)
-    return 0 if input.empty?
+    0 if input.empty?
   end
 end
