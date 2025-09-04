@@ -16,3 +16,6 @@ Test4 - test for sums of n numbers is already passed by the feature to sum two n
 
 Test 5 - add failing spec for new line between numbers
 ![New line between numbers fail](images/test5_fail.png)
+
+Test 6 - add failing spec for delimiters in headers
+![Delimiter in header fail](images/test6_fail.png)

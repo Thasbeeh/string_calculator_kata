@@ -26,5 +26,9 @@ RSpec.describe StringCalculator do
       expect(StringCalculator.add("1\n2,3")).to eq(6)
       expect(StringCalculator.add("10\n20\n30,40")).to eq(100)
     end
+
+    it "handles custom delimiters in headers" do
+      expect(StringCalculator.add("//;\n1;2")).to eq(3)
+    end
   end
 end
