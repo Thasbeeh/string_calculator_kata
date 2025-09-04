@@ -1,5 +1,5 @@
 class StringCalculator
   def self.add(input)
-    # Before implemeting addition
+    return 0 if input.empty?
   end
 end
