@@ -8,7 +8,7 @@ class StringCalculator
     elsif !input.include?(",")
       input.to_i
     else
-      input.split(",").map(&:to_i).sum
+      input.gsub("\n", ",").split(",").map(&:to_i).sum
     end
   end
 end
