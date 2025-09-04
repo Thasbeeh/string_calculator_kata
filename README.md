@@ -19,3 +19,6 @@ Test 5 - add failing spec for new line between numbers
 
 Test 6 - add failing spec for delimiters in headers
 ![Delimiter in header fail](images/test6_fail.png)
+
+Test 7 - add failing spec for negative numbers
+![Negative number exception](images/test7_fail.png)
