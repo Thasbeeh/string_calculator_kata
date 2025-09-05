@@ -22,3 +22,6 @@ Test 6 - add failing spec for delimiters in headers
 
 Test 7 - add failing spec for negative numbers
 ![Negative number exception](images/test7_fail.png)
+
+Test 8 - add failing spec for handling delimiters of any length
+![Delimiter of any length fail](images/test8_fail.png)
