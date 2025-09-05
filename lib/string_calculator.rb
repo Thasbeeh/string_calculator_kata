@@ -26,7 +26,13 @@ class StringCalculator
   end
 
   def self.extract_delimiter(input)
-    delimiter, numbers = input[2..].split("\n", 2)
-    [Regexp.escape(delimiter), numbers]
+    header, numbers = input[2..].split("\n", 2)
+
+    delimiters = if header.start_with?('[')
+                   header.scan(/\[([^\]]+)\]/).flatten
+                 else
+                   [header]
+                 end
+    [delimiters.map { |d| Regexp.escape(d) }, numbers]
   end
 end
