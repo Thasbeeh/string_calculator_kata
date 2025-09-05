@@ -73,6 +73,7 @@ bundle install
 
 # Run tests
 rspec
+```
 
 ---
 
