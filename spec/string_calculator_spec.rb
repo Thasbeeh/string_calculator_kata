@@ -36,5 +36,10 @@ RSpec.describe StringCalculator do
       expect { StringCalculator.add("1,-2,3") }.to raise_error("Negatives not allowed: -2")
       expect { StringCalculator.add("-1,-2,3") }.to raise_error("Negatives not allowed: -1, -2")
     end
+
+    it "handle delimiter of any length" do
+      expect(StringCalculator.add("//[***]\n1***2***3")).to eq(6)
+      expect(StringCalculator.add("//[;;;;]\n10;;;;20;;;;30")).to eq(60)
+    end
   end
 end
