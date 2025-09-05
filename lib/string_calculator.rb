@@ -3,17 +3,26 @@
 # StringCalculator is a simple calculator that adds numbers provided in a string format.
 class StringCalculator
   require 'pry'
+
   def self.add(input)
-    if input.empty?
-      0
-    elsif input.start_with?('//')
-      delimiter, numbers = extract_delimiter(input)
-      numbers.split(delimiter).map(&:to_i).sum
-    elsif !input.include?(',')
-      input.to_i
-    else
-      input.gsub("\n", ',').split(',').map(&:to_i).sum
+    # Handle empty string
+    return 0 unless input
+
+    delimiters = /,|\n/
+    # Check for custom delimiter in the header
+    if input.start_with?('//')
+      split_char, input = extract_delimiter(input)
+      delimiters = Regexp.new("#{delimiters.source}|#{split_char}")
     end
+
+    # Split the input string by the delimiters and convert to integers
+    numbers = input.split(delimiters).map(&:to_i)
+
+    # Check for negative numbers and raise an error if any are found
+    negatives = numbers.select(&:negative?)
+    raise("Negatives not allowed: #{negatives.join(', ')}") if negatives.any?
+
+    numbers.sum
   end
 
   def self.extract_delimiter(input)
